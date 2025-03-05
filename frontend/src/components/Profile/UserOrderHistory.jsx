@@ -14,7 +14,9 @@ const UserOrderHistory = () => {
 
     useEffect(() => {
         const fetch = async() => {
-            const response = await axios.get("http://localhost:1000/api/v1/get-order-history", { headers }
+            const response = await axios.get(
+              "https://full-stack-book-store-seven.vercel.app/api/v1/get-order-history",
+              { headers }
             );
             setOrderHistory(response.data.data);
         }

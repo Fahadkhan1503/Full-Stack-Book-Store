@@ -20,7 +20,7 @@ const ViewBookDetails = () => {
   useEffect(() => {
     const fetch = async () => {
       const response = await axios.get(
-        `http://localhost:1000/api/v1/get-book-by-id/${id}`
+        `https://full-stack-book-store-seven.vercel.app/api/v1/get-book-by-id/${id}`
       );
       console.log(response);
       setData(response.data.data);
@@ -36,7 +36,7 @@ const ViewBookDetails = () => {
 
   const handleFavourite = async () => {
     const response = await axios.put(
-      "http://localhost:1000/api/v1/add-book-to-favourite",
+      "https://full-stack-book-store-seven.vercel.app/api/v1/add-book-to-favourite",
       {},
       { headers }
     );
@@ -45,7 +45,7 @@ const ViewBookDetails = () => {
 
   const handleCart = async () => {
     const response = await axios.put(
-      "http://localhost:1000/api/v1/add-to-cart",
+      "https://full-stack-book-store-seven.vercel.app/api/v1/add-to-cart",
       {},
       { headers }
     );
@@ -53,7 +53,7 @@ const ViewBookDetails = () => {
   }
   const deleteBook = async () => {
     const response = await axios.delete(
-      `http://localhost:1000/api/v1/delete-book`,
+      `https://full-stack-book-store-seven.vercel.app/api/v1/delete-book`,
       { headers }
     );
     alert(response.data.message);

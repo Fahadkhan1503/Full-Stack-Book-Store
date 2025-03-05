@@ -31,7 +31,7 @@ const AddBook = () => {
         alert("All fields are required");
       } else {
         const response = await axios.post(
-          "http://localhost:1000/api/v1/add-book",
+          "https://full-stack-book-store-seven.vercel.app/api/v1/add-book",
           Data,
           { headers }
         );

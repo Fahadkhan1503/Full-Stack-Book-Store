@@ -29,21 +29,12 @@ const Settings = () => {
         alert("No Changes Detected, both email and address are same!!");
         return;
       }
-      // let warningMessage = "";
-      // if (Value.email === originalEmail) {
-      //   warningMessage += "Email remains unchanged. ";
-      //   alert(warningMessage);
-      // }
-      // if (Value.address === originalAddress) {
-      //   warningMessage += "Address remains unchanged. ";
-      //   alert(warningMessage);
-      // }
-      // if (warningMessage) {
-      //   alert(warningMessage);
-      //   return; 
-      // }
       else {
-        const res = await axios.put("http://localhost:1000/api/v1/update-profile", Value, {headers});
+        const res = await axios.put(
+          "https://full-stack-book-store-seven.vercel.app/api/v1/update-profile",
+          Value,
+          { headers }
+        );
         alert(res.data.message);
       }
     } catch (e) {
@@ -54,7 +45,10 @@ const Settings = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const response = await axios.get("http://localhost:1000/api/v1/get-user-information", { headers });
+      const response = await axios.get(
+        "https://full-stack-book-store-seven.vercel.app/api/v1/get-user-information",
+        { headers }
+      );
       setProfileData(response.data);
       setValue({ address: response.data.address, email: response.data.email });
     }
